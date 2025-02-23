@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Myth: Wukong - Steam</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #2b2b2b;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #171a21;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header .logo h1 {
+        color: #fff;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+      nav ul li a:hover {
+        color: #66c0f4;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+      }
+      main {
+        display: flex;
+        padding: 20px;
+      }
+      .game-details {
+        flex: 3;
+        background-color: #3f474f;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .video-container {
+        margin-bottom: 15px;
+      }
+      .thumbnails {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 15px;
+      }
+      .thumbnails img {
+        width: 100px;
+        height: auto;
+        cursor: pointer;
+        border: 2px solid #ffffff;
+        margin-right: 5px;
+      }
+      .thumbnails img:last-child {
+        margin-right: 0;
+      }
+      button.community-center {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .game-info {
+        flex: 1;
+        background-color: #3f474f;
+        margin-left: 20px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .image-preview {
+        display: none;
+        width: 100%;
+        height: auto;
+      }
+      .youtube-video {
+        display: none;
+        width: 100%;
+        height: 250px;
+        margin-top: 15px;
+      }
+      .reviews {
+        margin: 50px 0;
+        color: #fff;
+      }
+
+      .reviews-grid {
+        display: flex;
+        gap: 20px;
+      }
+
+      .review {
+        background-color: #2e2e2e;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        transition: transform 0.3s ease;
+      }
+
+      .review:hover {
+        transform: scale(1.05);
+      }
+
+      .review h4 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .reviewer {
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+
+      .rating {
+        margin-bottom: 10px;
+      }
+
+      .review-text {
+        margin: 15px 0;
+      }
+
+      .read-review {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      .read-review:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #171a21;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>UniX Store</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="game-details">
+        <h2>Black Myth: Wukong</h2>
+        <div class="video-container" id="video-container"></div>
+        <div class="thumbnails">
+          <img
+            src="ảnh/thm1.jpg"
+            alt="Thumbnail 1"
+            data-image="ảnh/thm1.jpg"
+            data-video=""
+          />
+          <img
+            src="ảnh/thm2.jpg"
+            alt="Thumbnail 2"
+            data-image="ảnh/thm2.jpg"
+            data-video=""
+          />
+          <img
+            src="ảnh/thm3.jpg"
+            alt="Thumbnail 3"
+            data-image="ảnh/thm3.jpg"
+            data-video=""
+          />
+          <img
+            src="ảnh/hihi.jpg"
+            alt="Video Thumbnail"
+            data-image=""
+            data-video="u83VdXAVq08 "
+          />
+        </div>
+
+        <button class="community-center">Trung tâm cộng đồng</button>
+      </section>
+      <aside class="game-info">
+        <h3>Thông tin trò chơi</h3>
+        <p>
+          Black Myth: Wukong is an action RPG rooted in Chinese mythology. The
+          story is based on Journey to the West, one of the Four Great Classical
+          Novels of Chinese literature. You shall set out as the Destined One to
+          venture into the challenges and marvels ahead, to uncover the obscured
+          truth beneath the veil of a glorious legend from the past.
+        </p>
+        <p>Đánh giá: Rất tích cực</p>
+        <p>Ngày phát hành: 20 Thg08, 2024</p>
+        <p>Nhà phát triển: Game Science</p>
+        <p>Nhà phát hành: Game Science</p>
+        <p>Thể loại: Vật lý, Đồ họa pixel, Roguelike</p>
+      </aside>
+    </main>
+    <section class="reviews">
+      <h3>Reviews</h3>
+      <div class="reviews-grid">
+        <div class="review">
+          <h4>GG</h4>
+          <p class="reviewer">by Joshua Robertson</p>
+          <div class="rating">
+            <span>★★★★☆</span>
+          </div>
+          <p class="review-text">
+            "It’s beautiful, frantic, challenging, and a delight to play."
+          </p>
+          <a href="#" class="read-review">Read Full Review</a>
+        </div>
+        <div class="review">
+          <h4>Good</h4>
+          <p class="reviewer">by Mitchell Saltzman</p>
+          <div class="rating">
+            <span>8/10</span>
+          </div>
+          <p class="review-text">
+            "Despite some frustrating technical issues, Black Myth: Wukong is a
+            great action game with fantastic combat, exciting bosses,
+            tantalizing secrets, and a beautiful world."
+          </p>
+          <a href="#" class="read-review">Read Full Review</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>© 2025 Steam</p>
+    </footer>
+
+    <script>
+      const videoContainer = document.getElementById("video-container");
+      const thumbnails = document.querySelectorAll(".thumbnails img");
+
+      // Hiển thị hình ảnh mặc định đầu tiên
+      const defaultImage = document.createElement("img");
+      defaultImage.src = "ảnh/thm1.jpg"; // Đường dẫn đến hình ảnh mặc định
+      defaultImage.classList.add("image-preview");
+      videoContainer.appendChild(defaultImage);
+      defaultImage.style.display = "block"; // Hiển thị ảnh mặc định
+
+      thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", function () {
+          const imageSrc = this.getAttribute("data-image");
+          const videoId = this.getAttribute("data-video");
+
+          // Xóa tất cả các video và hình ảnh trước đó
+          videoContainer.innerHTML = ""; // Xóa nội dung trong video-container
+
+          // Tạo và thêm nội dung mới
+          if (videoId) {
+            let videoPreview = document.createElement("iframe");
+            videoPreview.src = `https://www.youtube.com/embed/${videoId}`;
+            videoPreview.classList.add("youtube-video");
+            videoPreview.setAttribute("allowfullscreen", "allowfullscreen");
+            videoContainer.appendChild(videoPreview);
+            videoPreview.style.display = "block"; // Hiển thị video
+          } else if (imageSrc) {
+            // Hiển thị hình ảnh mới
+            let imagePreview = document.createElement("img");
+            imagePreview.src = imageSrc;
+            imagePreview.classList.add("image-preview");
+            videoContainer.appendChild(imagePreview);
+            imagePreview.style.display = "block"; // Hiển thị ảnh
+          }
+        });
+      });
+
+      document
+        .querySelector(".community-center")
+        .addEventListener("click", function () {
+          alert("Chuyển đến trung tâm cộng đồng!");
+        });
+    </script>
+  </body>
+</html>

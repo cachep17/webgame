@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - MindX Cinema</title>
+    <link rel="stylesheet" href="sign in.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+          <input type="text" id="username" placeholder="Username" required />
+          <span class="error" id="usernameError"></span>
+
+          <input type="email" id="email" placeholder="Email" required />
+          <span class="error" id="emailError"></span>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <span class="error" id="passwordError"></span>
+
+          <input
+            type="password"
+            id="verifyPassword"
+            placeholder="Verify Password"
+            required
+          />
+          <span class="error" id="verifyPasswordError"></span>
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>
+          Already have an account? <a href="/log out/sign up.html">Sign In</a>
+        </p>
+      </div>
+    </div>
+    <script src="log in.js"></script>
+  </body>
+</html>
