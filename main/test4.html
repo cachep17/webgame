@@ -257,7 +257,7 @@
       defaultImage.src = "/ảnh/thm1.jpg"; // Đường dẫn đến hình ảnh mặc định
       defaultImage.classList.add("image-preview");
       videoContainer.appendChild(defaultImage);
-      defaultImage.style.display = "block"; // Hiển thị ảnh mặc định
+      defaultImage.style.display = "block"; // ảnh mặc định
 
       thumbnails.forEach((thumbnail) => {
         thumbnail.addEventListener("click", function () {
@@ -274,14 +274,14 @@
             videoPreview.classList.add("youtube-video");
             videoPreview.setAttribute("allowfullscreen", "allowfullscreen");
             videoContainer.appendChild(videoPreview);
-            videoPreview.style.display = "block"; // Hiển thị video
+            videoPreview.style.display = "block"; //video
           } else if (imageSrc) {
             // Hiển thị hình ảnh mới
             let imagePreview = document.createElement("img");
             imagePreview.src = imageSrc;
             imagePreview.classList.add("image-preview");
             videoContainer.appendChild(imagePreview);
-            imagePreview.style.display = "block"; // Hiển thị ảnh
+            imagePreview.style.display = "block"; // ảnh
           }
         });
       });
