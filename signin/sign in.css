@@ -61,5 +61,7 @@ body {
 }
 
 .form-container a:hover {
-  color: white;
+  color: rgb(51, 212, 51);
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }

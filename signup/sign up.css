@@ -62,6 +62,6 @@ body {
 
 .form-container a:hover {
   color: hsl(77, 76%, 74%);
-  text-decoration: underline; /* Gạch chân khi hover */
-  transition: color 0.3s ease; /* Hiệu ứng chuyển đổi mượt */
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }

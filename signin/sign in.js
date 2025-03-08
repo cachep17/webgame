@@ -1,49 +1,60 @@
-document.getElementById("signupForm").addEventListener("submit", function (e) {
+document.getElementById("signinForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  //giá trị input
-  const username = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const verifyPassword = document.getElementById("verifyPassword").value;
+  try {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
-  // Reset thông báo lỗi
-  document.getElementById("usernameError").textContent = "";
-  document.getElementById("emailError").textContent = "";
-  document.getElementById("passwordError").textContent = "";
-  document.getElementById("verifyPasswordError").textContent = "";
+    // Reset thông báo lỗi
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
 
-  let valid = true;
+    let valid = true;
 
-  // Xác thực Username
-  if (username.length < 6 || username.length > 18) {
-    document.getElementById("usernameError").textContent =
-      "Username phải từ 6 đến 18 ký tự.";
-    valid = false;
-  }
+    // Kiểm tra email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      document.getElementById("emailError").textContent = "Email không hợp lệ.";
+      valid = false;
+    }
 
-  // Xác thực Email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    document.getElementById("emailError").textContent = "Email không hợp lệ.";
-    valid = false;
-  }
+    // Kiểm tra mật khẩu
+    if (password.length < 8 || password.length > 20) {
+      document.getElementById("passwordError").textContent =
+        "Mật khẩu phải từ 8 đến 20 ký tự.";
+      valid = false;
+    }
 
-  // Xác thực Password
-  if (password.length < 8 || password.length > 20) {
-    document.getElementById("passwordError").textContent =
-      "Password phải từ 8 đến 20 ký tự.";
-    valid = false;
-  }
+    if (valid) {
+      // Kiểm tra thư viện CryptoJS đã tải chưa
+      if (typeof CryptoJS === "undefined") {
+        alert("Lỗi: Không tìm thấy thư viện CryptoJS.");
+        return;
+      }
 
-  // Xác thực Verify Password
-  if (password !== verifyPassword) {
-    document.getElementById("verifyPasswordError").textContent =
-      "Verify Password không trùng khớp.";
-    valid = false;
-  }
+      // Lấy danh sách user đã lưu (nếu có)
+      let users = JSON.parse(localStorage.getItem("users")) || [];
 
-  if (valid) {
-    alert("Đăng ký thành công!");
+      // Tìm user có email khớp
+      const user = users.find((user) => user.email === email);
+
+      if (!user) {
+        alert("Sai email hoặc mật khẩu!");
+        return;
+      }
+
+      // Mã hóa mật khẩu nhập vào với salt đã lưu
+      const hashedPassword = CryptoJS.SHA256(password + user.salt).toString();
+
+      if (hashedPassword === user.password) {
+        alert("Đăng nhập thành công!");
+        window.location.href = "/home/home.html"; // Chuyển hướng đến trang chủ
+      } else {
+        alert("Sai email hoặc mật khẩu!");
+      }
+    }
+  } catch (error) {
+    console.error("Lỗi xử lý đăng nhập:", error);
+    alert("Đã xảy ra lỗi trong quá trình đăng nhập.");
   }
 });
