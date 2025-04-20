@@ -31,24 +31,20 @@ document.getElementById("signinForm").addEventListener("submit", function (e) {
         alert("Lỗi: Không tìm thấy thư viện CryptoJS.");
         return;
       }
-
       // Lấy danh sách user đã lưu (nếu có)
       let users = JSON.parse(localStorage.getItem("users")) || [];
-
-      // Tìm user có email khớp
+      // Tìm user có email ok rồi
       const user = users.find((user) => user.email === email);
-
       if (!user) {
         alert("Sai email hoặc mật khẩu!");
         return;
       }
-
-      // Mã hóa mật khẩu nhập vào với salt đã lưu
+      // Mã hóa mật khẩu nhập vào với salt ( chuỗi ký tự ngẫu nhiên ) đã lưu
       const hashedPassword = CryptoJS.SHA256(password + user.salt).toString();
 
       if (hashedPassword === user.password) {
         alert("Đăng nhập thành công!");
-        window.location.href = "/home/home.html"; // Chuyển hướng đến trang chủ
+        window.location.href = "/home/home.html"; // Chuyển đến trang chủ
       } else {
         alert("Sai email hoặc mật khẩu!");
       }

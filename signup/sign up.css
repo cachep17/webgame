@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url("/image/sign\ up.jpg") no-repeat center center/cover;
+  background: url("/image/4k\ log\ out.jpg") no-repeat center center/cover;
   color: white;
 }
 
@@ -17,7 +17,7 @@ body {
 
 /* Form container */
 .form-container {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(117, 108, 108, 0.8);
   padding: 35px;
   border-radius: 8px;
   width: 300px;
